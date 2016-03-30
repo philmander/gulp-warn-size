@@ -1,0 +1,37 @@
+{
+  "name": "gulp-warn-size",
+  "version": "0.1.0",
+  "description": "Gulp plugin that warns when a file exceeds a given size limit",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gulpplugin",
+    "filesize",
+    "file",
+    "size",
+    "check-size"
+  ],
+  "author": "Phil Mander",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^1.0.0",
+    "gulp-util": "^3.0.0",
+    "gzip-size": "^3.0.0",
+    "object-assign": "^4.0.1",
+    "pretty-bytes": "^3.0.1",
+    "stream-counter": "^1.0.0",
+    "through2": "^2.0.0"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "xo": "*"
+  },
+  "xo": {
+    "env": [
+      "node",
+      "mocha"
+    ]
+  }
+}
