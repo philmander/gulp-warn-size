@@ -3,8 +3,12 @@
   "version": "0.1.0",
   "description": "Gulp plugin that warns when a file exceeds a given size limit",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/philmander/gulp-warn-size"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "xo && mocha"
   },
   "keywords": [
     "gulpplugin",
