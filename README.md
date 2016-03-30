@@ -54,6 +54,22 @@ Default: `true`
 
 Emits an error from the stream if a file exceeds the given limit. Otherwise, just a warning will be logged to the console
 
+##### filter
+
+Type: `RegExp`<br>
+Default: /.*/
+
+Only applies file size checking to files which match this pattern. E.g.
+
+```
+gulp.src('src/**/*')
+    .pipe(warn-size({
+        limit: 2048,
+        filter: /\.js$/ //only check JS files
+    }))
+    .pipe(gulp.dest('dist'))
+```
+
 ##### pretty
 
 Type: `boolean`<br>

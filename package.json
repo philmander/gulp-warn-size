@@ -1,6 +1,6 @@
 {
   "name": "gulp-warn-size",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Gulp plugin that warns when a file exceeds a given size limit",
   "main": "index.js",
   "repository": {

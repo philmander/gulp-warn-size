@@ -10,7 +10,8 @@ var PLUGIN_NAME = 'gulp-warn-size';
 
 var defaults = {
     pretty: true,
-    errorOnFail: true
+    errorOnFail: true,
+    filter: /.*/
 };
 
 module.exports = function (opts) {
@@ -26,6 +27,12 @@ module.exports = function (opts) {
     var limit = parseInt(opts.limit);
     if(isNaN(limit)) {
         throw new gutil.PluginError('gulp-warn-size', 'You must specify a (valid) file size limit in bytes');
+    }
+
+    if(typeof opts.filter === 'string') {
+        opts.filter = new RegExp(opts.filter);
+    } else if(!(opts.filter instanceof RegExp)) {
+        throw new gutil.PluginError('gulp-warn-size', 'Filter option must be a regular expression');
     }
     
     function log(what, size, limit) {
@@ -53,7 +60,7 @@ module.exports = function (opts) {
                 return;
             }
             
-            if(limit >= 0 && size > limit) {
+            if(opts.filter.test(file.relative) && limit >= 0 && size > limit) {
                 log(file.relative, size, limit);
 
                 if(opts.errorOnFail) {
